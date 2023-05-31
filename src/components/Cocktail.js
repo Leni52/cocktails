@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import CocktailService from '../services/cocktailService';
+import './Cocktail.css';
 
 const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -8,7 +12,7 @@ const Cocktail = () => {
   const handleSearch = async () => {
     try {
       if (searchTerm.trim() === '') {
-        // Clear the cocktail list if search term is empty
+       
         setCocktails([]);
         return;
       }
@@ -20,18 +24,27 @@ const Cocktail = () => {
     }
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
 
     if (value === '' && cocktails.length > 0) {
-      // Clear the cocktail list when input is empty and there is a list
+
       setCocktails([]);
     }
   };
 
   return (
-    <div>
+    <div className='slider-container'>
       <input
         type="text"
         value={searchTerm}
@@ -39,20 +52,17 @@ const Cocktail = () => {
       />
       <button onClick={handleSearch}>Search</button>
 
-      <h2>Results</h2>
+       <h2>Results</h2>
       {cocktails.length > 0 ? (
-        <ul>
-         
-            {cocktails.map((cocktail) => (
-              <li key={cocktail.idDrink}>
-                {cocktail.strDrink}
-                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-              </li>
-            ))}
-         
-          
-          
-        </ul>
+        <Slider className='slider'
+         {...settings}>
+          {cocktails.map((cocktail) => (
+            <div key={cocktail.idDrink}>
+              <h3>{cocktail.strDrink}</h3>
+              <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+            </div>
+          ))}
+        </Slider>
       ) : (
         <p>No cocktails found.</p>
       )}
