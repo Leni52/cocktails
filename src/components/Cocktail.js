@@ -45,6 +45,7 @@ const Cocktail = () => {
 
   return (
     <div className='slider-container'>
+      <p>Hi, welcome to our cocktail's page. Search for a cocktail by entering a keyword.</p>
       <input
         type="text"
         value={searchTerm}
