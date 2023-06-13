@@ -23,18 +23,18 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '$(Build.SourcesDirectory)'
+    workingDir: '$(System.DefaultWorkingDirectory)'
   displayName: 'Install Dependencies'
 
 - task: Npm@1
   inputs:
     command: 'custom'
-    workingDir: '$(Build.SourcesDirectory)'
+    workingDir: '$(System.DefaultWorkingDirectory)'
     customCommand: 'build'
   displayName: 'Build React App'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)/build'
+    pathtoPublish: '$(System.DefaultWorkingDirectory)/build'
     artifactName: 'react-app'
   displayName: 'Publish Artifacts'
