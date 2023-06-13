@@ -15,7 +15,7 @@ steps:
 
 - job: Deploy
   displayName: 'Deploy job'
-  environment: 'Development'
+  environment: 'Development' # Specify the environment name here
   steps:
     - script: echo 'Deploying to Development...'
       displayName: 'Deployment step'
