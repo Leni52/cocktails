@@ -19,26 +19,3 @@ steps:
   steps:
     - script: echo 'Deploying to Development...'
       displayName: 'Deployment step'
-    - script: echo 'Deployment to Development completed.'
-      displayName: 'Deployment confirmation'
-
-- job: ApproveDeployment
-  displayName: 'Approve Deployment'
-  environment: 'Production'
-  dependsOn: Deploy
-  condition: succeeded()
-  steps:
-    - script: echo 'Waiting for approval...'
-      displayName: 'Wait for approval'
-
-   
-- job: DeployToProduction
-  displayName: 'Deploy to Production'
-  environment: 'Production'
-  dependsOn: ApproveDeployment
-  condition: succeeded('ApproveDeployment')
-  steps:
-    - script: echo 'Deploying to Production...'
-      displayName: 'Deployment step'
-    - script: echo 'Deployment to Production completed.'
-      displayName: 'Deployment confirmation'
