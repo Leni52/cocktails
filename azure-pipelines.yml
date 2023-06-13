@@ -28,9 +28,9 @@ steps:
 
 - task: Npm@1
   inputs:
-    command: 'run'
+    command: 'custom'
     workingDir: '$(Build.SourcesDirectory)'
-    arguments: 'build'
+    customCommand: 'build'
   displayName: 'Build React App'
 
 - task: PublishBuildArtifacts@1
