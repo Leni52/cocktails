@@ -20,9 +20,6 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- script: npm run build
-  displayName: 'Build'
-
 - script: npm run deploy
   displayName: 'Deploy to GitHub Pages'
 
