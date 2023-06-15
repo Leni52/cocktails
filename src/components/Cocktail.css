@@ -1,0 +1,23 @@
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .slider {
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .slider img {
+    width: 50%;
+    height: auto;
+  }
+  
+  h2 {
+    margin-top: 20px;
+  }
+  
