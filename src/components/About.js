@@ -4,7 +4,7 @@ import './About.css';
 const About = () => {
     return (
         <>
-        Here is just a test text.
+     This is the about page. Here are some cocktails you can try!
         </>
     );
 };
