@@ -18,5 +18,5 @@ jobs:
           uses: Azure/pipelines@v1
           with:
             azure-devops-project-url: https://dev.azure.com/lenchepetrov58/Cocktails
-            azure-pipeline-name: 'azure-pipelines1.yml'
+            azure-pipeline-name: 'github-actions-demo.yml'
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
