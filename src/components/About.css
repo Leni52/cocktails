@@ -1,8 +1,11 @@
-.container {
+.image {
     background-image: url('../../public/cocktail-background.jpg');
     /* Additional CSS properties */
-
+width: 400px;
   }
 image{
-    width: 400px;
+    width: 100%;
+}
+p{
+    background-color: rgb(229, 229, 245);
 }

@@ -4,6 +4,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CocktailService from '../services/cocktailService';
 import './Cocktail.css';
+import { Link } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
 
 const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -46,6 +49,8 @@ const Cocktail = () => {
   return (
     <div className='slider-container'>
       <p>Hi, welcome to our cocktail's page. Search for a cocktail by entering a keyword.</p>
+<Link to="/home">Home</Link>
+<Link to="/about">About</Link>
       <input
         type="text"
         value={searchTerm}
