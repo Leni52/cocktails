@@ -12,6 +12,8 @@ const About = () => {
                Here are some cocktails you can try!
                 This is the about page.
                 Testing purpose only. 
+                Testing purpose only. 
+                Testing purpose only. 
             </p>
         </>
     );
