@@ -9,7 +9,8 @@ const About = () => {
 
             </div>
             <p className='container'>
-                This is the about page. Here are some cocktails you can try!
+               Here are some cocktails you can try!
+                This is the about page.
             </p>
         </>
     );
