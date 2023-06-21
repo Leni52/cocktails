@@ -11,6 +11,7 @@ const About = () => {
             <p className='container'>
                Here are some cocktails you can try!
                 This is the about page.
+                Testing purpose only. 
             </p>
         </>
     );
