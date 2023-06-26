@@ -8,11 +8,11 @@ import './Cocktail.css';
 const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cocktails, setCocktails] = useState([]);
+  const [selectedCocktail, setSelectedCocktail] = useState(null);
 
   const handleSearch = async () => {
     try {
       if (searchTerm.trim() === '') {
-       
         setCocktails([]);
         return;
       }
@@ -32,40 +32,45 @@ const Cocktail = () => {
     slidesToScroll: 1,
   };
 
-
   const handleInputChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
 
     if (value === '' && cocktails.length > 0) {
-
       setCocktails([]);
     }
   };
 
   return (
-    <div className='slider-container'>
+    <div className="slider-container">
       <p>Hi, welcome to our cocktail's page. Search for a cocktail by entering a keyword.</p>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleInputChange}
-      />
+      <input type="text" value={searchTerm} onChange={handleInputChange} />
       <button onClick={handleSearch}>Search</button>
 
-       <h2>Results</h2>
+      <h2>Results</h2>
       {cocktails.length > 0 ? (
-        <Slider className='slider'
-         {...settings}>
+        <Slider className="slider" {...settings}>
           {cocktails.map((cocktail) => (
             <div key={cocktail.idDrink}>
               <h3>{cocktail.strDrink}</h3>
-              <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+              <img
+                src={cocktail.strDrinkThumb}
+                alt={cocktail.strDrink}
+                onClick={() => setSelectedCocktail(cocktail)}
+              />
             </div>
           ))}
         </Slider>
       ) : (
         <p>No cocktails found.</p>
+      )}
+
+      {selectedCocktail && (
+        <div className="popup">
+          <h3>{selectedCocktail.strDrink}</h3>
+          <p>{selectedCocktail.strInstructions}</p>
+          <button onClick={() => setSelectedCocktail(null)}>Close</button>
+        </div>
       )}
     </div>
   );
