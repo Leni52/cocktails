@@ -20,5 +20,37 @@
   h2 {
     margin-top: 20px;
   }
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 999;
+  }
 
+  .popup h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .popup p {
+    margin-bottom: 20px;
+  }
+
+  .popup button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .popup button:hover {
+    background-color: #0056b3;
+  }
   
