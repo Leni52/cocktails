@@ -5,8 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import CocktailService from '../services/cocktailService';
 import './Cocktail.css';
 import { Link } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
+
 
 const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
