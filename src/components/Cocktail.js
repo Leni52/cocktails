@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CocktailService from '../services/cocktailService';
-import './Cocktail.css';
+
 
 const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
