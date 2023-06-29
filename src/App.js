@@ -4,18 +4,20 @@ import './App.css';
 import About from './components/About';
 import Cocktail from './components/Cocktail';
 import Home from './components/Home';
-
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      
+      <Header />
         <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>}/>
           <Route path="/cocktails" element={<Cocktail />} />
         </Routes>
-      </Router>
+     <Footer />
     </div>
   );
 }
