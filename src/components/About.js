@@ -24,8 +24,7 @@ const About = () => {
             </div>
             <div className="row gx-5">
                 <div className="col-lg-5 mb-5 mb-lg-0" style={{minHeight: 400+'px'}}>
-                    <div className="position-relative h-100">
-                        <img className="position-absolute w-100 h-100" src="assets/img/about.jpg" style={{objectFit: 'cover'}} />
+                    <div className="position-relative h-100">                        
                     </div>
                 </div>
                 <div className="col-lg-6 pb-5">
@@ -36,14 +35,14 @@ const About = () => {
                             <div className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style={{width: 90+'px', height: 90+'px'}}>
                                 <i className="fa fa-heartbeat fa-2x text-white"></i>
                             </div>
-                            <h4 className="text-uppercase">100% Healthy</h4>
+                            <h4 className="text-uppercase">100% Tasty</h4>
                             <p className="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
                         </div>
                         <div className="col-sm-6">
                             <div className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4" style={{width: 90+'px', height: 90+'px'}}>
                                 <i className="fa fa-award fa-2x text-white"></i>
                             </div>
-                            <h4 className="text-uppercase">Award Winning</h4>
+                            <h4 className="text-uppercase">Award Winning Recipes</h4>
                             <p className="mb-0">Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor vero</p>
                         </div>
                     </div>
