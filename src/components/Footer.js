@@ -27,8 +27,8 @@ const Footer = () => {
                                 <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                                     <h4 className="text-primary text-uppercase mb-4">Quick Links</h4>
                                     <div className="d-flex flex-column justify-content-start">
-                                        <a className="text-secondary mb-2" href="#"><i className="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                        <a className="text-secondary mb-2" href="#"><i className="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                        <Link to="/"><i className="bi bi-arrow-right text-primary me-2"></i>Home</Link>
+                                        <Link to="/about"><i></i>About Us</Link>
 
                                     </div>
                                 </div>
@@ -40,9 +40,9 @@ const Footer = () => {
             </div>
             <div className="container-fluid text-secondary py-4" >
                 <div className="container text-center">
-                    <p className="mb-0">&copy; <Link to="/cocktails" className="text-white border-bottom">Cocktails</Link>. All Rights Reserved.
-
-                    </p>
+                <p style={{ color:"#555555" }}>Copyright © {new Date().getFullYear()} <Link to="/">| The Best Cocktails.</Link>
+                        <br/>All rights reserved.
+                        </p>
                 </div>
             </div>
         </div>

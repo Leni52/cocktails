@@ -10,6 +10,10 @@ const Cocktail = () => {
   const [cocktails, setCocktails] = useState([]);
   const [selectedCocktail, setSelectedCocktail] = useState(null);
 
+  const handleImageClick= (cocktail) => {
+    setSelectedCocktail(cocktail);
+  }
+  
   const handleSearch = async () => {
     try {
       if (searchTerm.trim() === '') {
@@ -43,33 +47,33 @@ const Cocktail = () => {
 
   return (
     <div className="slider-container">
-      <p>Hi, welcome to our cocktail's page. Search for a cocktail by entering a keyword.</p>
+      <p>Search for a cocktail by entering a keyword.</p>
       <input type="text" value={searchTerm} onChange={handleInputChange} />
       <button onClick={handleSearch}>Search</button>
 
-      <h2>Results</h2>
+      <h2>Results: </h2>
       {cocktails.length > 0 ? (
         <Slider className="slider" {...settings}>
           {cocktails.map((cocktail) => (
-            <div key={cocktail.idDrink}>
+            <div key={cocktail.idDrink} className="cocktail-item">
               <h3>{cocktail.strDrink}</h3>
               <img
                 src={cocktail.strDrinkThumb}
+                style={{ maxWidth: '400px' }}
                 alt={cocktail.strDrink}
-                onClick={() => setSelectedCocktail(cocktail)}
+                onClick={() => handleImageClick(cocktail)}
               />
             </div>
           ))}
         </Slider>
       ) : (
-        <p>No cocktails found.</p>
+        <p>No cocktails found with this keyword. Please try another.</p>
       )}
 
-      {selectedCocktail && (
+{selectedCocktail && (
         <div className="popup">
-          <h3>{selectedCocktail.strDrink}</h3>
+          <h3 style={{ maxWidth: '600px' }}>{selectedCocktail.strDrink}</h3>
           <p>{selectedCocktail.strInstructions}</p>
-          <button onClick={() => setSelectedCocktail(null)}>Close</button>
         </div>
       )}
     </div>
