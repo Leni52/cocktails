@@ -379,4 +379,18 @@ h6,
       opacity: 1;
     }
   }
+  .search-description{
+    line-height: 2;
+    color: #363333;
+  }
+  .image-container {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-left:200px;
+  }
+  
+  .home-img {
+    width: 100%;
+    max-width: 400px;
+  }
   

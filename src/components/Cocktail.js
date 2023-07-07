@@ -9,11 +9,13 @@ const Cocktail = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [cocktails, setCocktails] = useState([]);
   const [selectedCocktail, setSelectedCocktail] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleImageClick= (cocktail) => {
     setSelectedCocktail(cocktail);
+    setShowPopup(true);
   }
-  
+
   const handleSearch = async () => {
     try {
       if (searchTerm.trim() === '') {
@@ -23,6 +25,8 @@ const Cocktail = () => {
 
       const data = await CocktailService.searchCocktails(searchTerm);
       setCocktails(data.drinks || []);
+      setSelectedCocktail(null);
+      setShowPopup(false);
     } catch (error) {
       console.error('Error searching cocktails:', error.message);
     }
@@ -34,6 +38,7 @@ const Cocktail = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    beforeChange:() => setShowPopup(false) //hide the popup
   };
 
   const handleInputChange = (e) => {
@@ -47,7 +52,15 @@ const Cocktail = () => {
 
   return (
     <div className="slider-container">
-      <p>Search for a cocktail by entering a keyword.</p>
+      <p className='search-description'>Discover a world of delightful flavors with our cocktails recipe page. <br/>
+        Explore a diverse collection of cocktail recipes that will elevate your mixology skills.<br/>
+         From classic favorites to innovative concoctions, <br/>
+          unlock the secrets to crafting refreshing beverages that are perfect for any occasion. <br/>
+           Cheers to creative mixology and unforgettable flavors!</p>
+           <div> <i className="fa fa-glass" ></i></div>
+      <p>Search for a cocktail by entering a keyword.
+     
+      </p>
       <input type="text" value={searchTerm} onChange={handleInputChange} />
       <button onClick={handleSearch}>Search</button>
 
@@ -70,7 +83,7 @@ const Cocktail = () => {
         <p>No cocktails found with this keyword. Please try another.</p>
       )}
 
-{selectedCocktail && (
+{selectedCocktail && showPopup && (
         <div className="popup">
           <h3 style={{ maxWidth: '600px' }}>{selectedCocktail.strDrink}</h3>
           <p>{selectedCocktail.strInstructions}</p>
