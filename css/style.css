@@ -117,10 +117,6 @@ h6,
     }
 }
 
-.hero-header {
-    background: url(../img/hero.jpg) top right no-repeat;
-    background-size: cover;
-}
 
 .btn-play {
     position: relative;
@@ -189,30 +185,6 @@ h6,
     }
 }
 
-#videoModal .modal-dialog {
-    position: relative;
-    max-width: 800px;
-    margin: 60px auto 0 auto;
-}
-
-#videoModal .modal-body {
-    position: relative;
-    padding: 0px;
-}
-
-#videoModal .close {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    right: 0px;
-    top: -30px;
-    z-index: 999;
-    font-size: 30px;
-    font-weight: normal;
-    color: #FFFFFF;
-    background: #000000;
-    opacity: 1;
-}
 
 .section-title::before {
     position: absolute;
@@ -312,4 +284,117 @@ h6,
 .bg-img {
     background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
+}
+/* Adjust the positioning of the cocktail item and popup */
+.cocktail-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* Add relative positioning to the container */
+    padding-left:15px;
+  }
+  
+  .popup {
+    position: absolute;
+    top: 80%;
+    left: 35%; /* Position the popup to the right of the image */
+    transform: translate(10px, 0%); /* Adjust the gap between image and popup */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensure the popup appears above the slider */
+  }
+  
+  .popup h3 {
+    margin-bottom: 5px;
+  }
+  
+  .slide-in-fwd-center {
+	-webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes slide-in-fwd-center {
+    0% {
+      -webkit-transform: translateZ(-1400px);
+              transform: translateZ(-1400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-fwd-center {
+    0% {
+      -webkit-transform: translateZ(-1400px);
+              transform: translateZ(-1400px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  .search-description{
+    line-height: 2;
+    color: #363333;
+  }
+  .image-container {
+    text-align: right;
+    margin-bottom: 20px;
+    padding-left:200px;
+    
+  }
+  
+  .home-img {
+    width: 45%;    
+    position: absolute;
+    padding-left: 400px;
+    margin-left: 400px;
+  }
+  .swing-in-top-fwd {
+	-webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+ @-webkit-keyframes swing-in-top-fwd {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 1;
+    }
+  }
+  @keyframes swing-in-top-fwd {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+              transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+      opacity: 1;
+    }
+  }
+.search-description{
+    color:#363333;
+    margin-top: 50px;
+    font-size: 20px;
 }
