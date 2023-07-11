@@ -58,7 +58,7 @@ const Cocktail = () => {
           unlock the secrets to crafting refreshing beverages that are perfect for any occasion. <br/>
            Cheers to creative mixology and unforgettable flavors!</p>
            <div> <i className="fa fa-glass" ></i></div>
-      <p>Search for a cocktail by entering a keyword.
+      <p>Search for a cocktail by entering a keyword:
      
       </p>
       <input type="text" value={searchTerm} onChange={handleInputChange} />
@@ -72,7 +72,7 @@ const Cocktail = () => {
               <h3>{cocktail.strDrink}</h3>
               <img
                 src={cocktail.strDrinkThumb}
-                style={{ maxWidth: '400px' }}
+                style={{ maxWidth: '350px', marginLeft: '50px' }}
                 alt={cocktail.strDrink}
                 onClick={() => handleImageClick(cocktail)}
               />
@@ -84,8 +84,8 @@ const Cocktail = () => {
       )}
 
 {selectedCocktail && showPopup && (
-        <div className="popup">
-          <h3 style={{ maxWidth: '600px' }}>{selectedCocktail.strDrink}</h3>
+        <div className="popup" style={{margin: 'auto', width: 50+ '%'}}>
+          <h3 style={{ maxWidth: 300 +'px', maxHeight:'300px' }}>{selectedCocktail.strDrink}</h3>
           <p>{selectedCocktail.strInstructions}</p>
         </div>
       )}
