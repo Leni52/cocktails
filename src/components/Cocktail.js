@@ -11,7 +11,7 @@ const Cocktail = () => {
   const [selectedCocktail, setSelectedCocktail] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleImageClick= (cocktail) => {
+  const handleImageClick = (cocktail) => {
     setSelectedCocktail(cocktail);
     setShowPopup(true);
   }
@@ -38,7 +38,7 @@ const Cocktail = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange:() => setShowPopup(false) //hide the popup
+    beforeChange: () => setShowPopup(false) //hide the popup
   };
 
   const handleInputChange = (e) => {
@@ -52,14 +52,14 @@ const Cocktail = () => {
 
   return (
     <div className="slider-container">
-      <p className='search-description'>Discover a world of delightful flavors with our cocktails recipe page. <br/>
-        Explore a diverse collection of cocktail recipes that will elevate your mixology skills.<br/>
-         From classic favorites to innovative concoctions, <br/>
-          unlock the secrets to crafting refreshing beverages that are perfect for any occasion. <br/>
-           Cheers to creative mixology and unforgettable flavors!</p>
-           <div> <i className="fa fa-glass" ></i></div>
+      <p className='search-description'>Discover a world of delightful flavors with our cocktails recipe page. <br />
+        Explore a diverse collection of cocktail recipes that will elevate your mixology skills.<br />
+        From classic favorites to innovative concoctions, <br />
+        unlock the secrets to crafting refreshing beverages that are perfect for any occasion. <br />
+        Cheers to creative mixology and unforgettable flavors!</p>
+      <div> <i className="fa fa-glass" ></i></div>
       <p>Search for a cocktail by entering a keyword:
-     
+
       </p>
       <input type="text" value={searchTerm} onChange={handleInputChange} />
       <button onClick={handleSearch}>Search</button>
@@ -83,9 +83,20 @@ const Cocktail = () => {
         <p>No cocktails found with this keyword. Please try another.</p>
       )}
 
-{selectedCocktail && showPopup && (
-        <div className="popup" style={{margin: 'auto', width: 50+ '%'}}>
-          <h3 style={{ maxWidth: 300 +'px', maxHeight:'300px' }}>{selectedCocktail.strDrink}</h3>
+      {selectedCocktail && showPopup && (
+        <div className="popup" style={{ margin: 'auto', width: 40 + '%' }}>
+          <h3 style={{ maxWidth: 300 + 'px', maxHeight: '300px', textDecoration: 'underline solid', textAlign: 'center' }}>
+            {selectedCocktail.strDrink}</h3>
+          <h4>Ingredients:</h4>
+          <h5>{selectedCocktail.strIngredient1}</h5>
+          <h5>{selectedCocktail.strIngredient2}</h5>
+          <h5>{selectedCocktail.strIngredient3}</h5>
+          <h5>{selectedCocktail.strIngredient4}</h5>
+          <h5>{selectedCocktail.strIngredient5}</h5>
+          <h5>{selectedCocktail.strIngredient6}</h5>
+          <h5>{selectedCocktail.strIngredient7}</h5>
+          <h5>{selectedCocktail.strIngredient8}</h5>
+          <h5>{selectedCocktail.strIngredient9}</h5>
           <p>{selectedCocktail.strInstructions}</p>
         </div>
       )}

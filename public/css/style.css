@@ -296,7 +296,7 @@ h6,
   
   .popup {
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 35%; /* Position the popup to the right of the image */
     transform: translate(10px, 0%); /* Adjust the gap between image and popup */
     background-color: #fff;
